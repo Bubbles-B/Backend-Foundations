@@ -34,11 +34,6 @@ app.get('/contact', (req, res) => {
     res.render('contact')
 })
 
-app.get('/post', (req, res) => {
-    // res.sendFile(path.resolve(__dirname, 'pages/post.html'))
-    res.render('post')
-})
-
 app.get('/posts/new', (req, res) => {
     res.render('create')
 })
