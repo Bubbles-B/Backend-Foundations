@@ -103,6 +103,7 @@ module.exports = async (req, res, next) => {
 
 - **Important change:** this middleware protects `/posts/new and /posts/store`, logged-out users hitting either route are redirected to the home page instead of reaching the controller.
 <br>
+
 **middleware/redirectIfAuthenticatedMiddleware.js** (This how your file should look like after updating it)
 ```javascript
 module.exports = (req, res, next) => {
@@ -114,6 +115,7 @@ module.exports = (req, res, next) => {
 ```
 - **Important change:** this middleware protects `/auth/register and /auth/login`, logged-in users are redirected to the home page instead of seeing those forms again.
 <br>
+
 **controllers/logout.js** (This how your file should look like after updating it)
 ```javascript
 module.exports = (req, res) => {
@@ -126,6 +128,7 @@ module.exports = (req, res) => {
 <br>
 
 **views/layouts/navbar.ejs** (This how your file should look like after updating it with conditional links)
+
 - **Inside your navbar file, the `<div id="navbarResponsive">` container has been updated to include conditional links based on whether a user is logged in or not.**
 
 ```html
