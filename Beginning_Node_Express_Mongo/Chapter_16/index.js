@@ -20,7 +20,7 @@ const flash = require('connect-flash'); //Page 122
 
 
 // --- Updated to Cloud Database ---
-mongoose.connect('mongodb+srv://Lee:Lee123@cluster0.bofbx.mongodb.net/my_database')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/my_database');
 
 //page 107
 app.use(expressSession({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
