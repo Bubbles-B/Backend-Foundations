@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header'); -%>
+
+    <body>
+        <%- include('layouts/navbar'); -%>
+            <!-- Page Header-->
+            <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+                <div class="container position-relative px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="site-heading">
+                                <h1>Clean Blog</h1>
+                                <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Main Content-->
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+                        <!--PAGE 71 TRY OUT-->
+                        <!-- <form action="/" method="GET" class="mb-4">
+                            <input type="text" name="search" placeholder="Search posts by title...">
+                            <button type="submit">Search</button>
+                        </form> -->
+
+                        <!-- CHANGE: replaced the 4 hardcoded post-preview divs with a for-loop -->
+                        <!-- This loop runs once for every item in the blogposts array (passed in from index.js) -->
+                        <% for (var i=0; i < blogposts.length; i++) { %>
+                            <!-- Post preview-->
+                            <div class="post-preview">
+                                <a href="/post/<%= blogposts[i]._id %>">
+                                    <!-- CHANGE: <%= %> outputs the actual value from the database instead of static text -->
+                                    <h2 class="post-title">
+                                        <%= blogposts[i].title %>
+                                    </h2>
+                                    <!--Hide the body-->
+                                    <!-- <h3 class="post-subtitle">
+                                         <%- blogposts[i].body %>
+                                    </h3> -->
+                                </a>
+                                <p class="post-meta">
+                                    Posted by
+                                    <a href="#!">
+                                        <%= blogposts[i].userid.username %> <!--129-->
+                                    </a>
+                                    on <%= blogposts[i].datePosted.toDateString() %>
+                                </p>
+                            </div>
+                            <!-- Divider-->
+                            <hr class="my-4" />
+                            <% } %>
+                                <!-- CHANGE: end of loop -->
+
+                                <!-- Pager-->
+                                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase"
+                                        href="#!">Older Posts →</a></div>
+                    </div>
+                </div>
+            </div>
+            <%- include('layouts/footer'); -%>
+                <%- include('layouts/scripts'); -%>
+    </body>
+
+</html>
