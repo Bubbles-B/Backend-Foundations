@@ -1,0 +1,26 @@
+{
+  "name": "chapter_10",
+  "version": "1.0.0",
+  "description": "BEGINNING OUR BLOG PROJECT",
+  "license": "ISC",
+  "author": "Lesedi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.9.2",
+    "mongoose-unique-validator": "^6.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
