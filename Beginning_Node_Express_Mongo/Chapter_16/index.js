@@ -37,7 +37,7 @@ app.use('/*splat', (req, res, next) => {
 app.set('view engine', 'ejs')
 // Forces Express to fetch styles and scripts from the true absolute path directory
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(fileUpload()) //Page 80
