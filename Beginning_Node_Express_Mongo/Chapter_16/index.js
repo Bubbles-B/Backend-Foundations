@@ -17,7 +17,6 @@ const authMiddleware = require('./middleware/authMiddleware'); //page 110
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware') //page 111
 const logoutController = require('./controllers/logout') //page 114
 const flash = require('connect-flash'); //Page 122
-const path = require('path') //add
 
 
 // --- Updated to Cloud Database ---
@@ -35,9 +34,7 @@ app.use('/*splat', (req, res, next) => {
 
 
 app.set('view engine', 'ejs')
-// Forces Express to fetch styles and scripts from the true absolute path directory
-app.use(express.static(path.join(__dirname, 'public')))
-// app.use(express.static('public'))
+app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(fileUpload()) //Page 80
