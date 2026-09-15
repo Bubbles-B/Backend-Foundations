@@ -13,10 +13,6 @@ $(document).ready(() => {
     return false;
   });
 
-  socket.on("message", message => {
-    displayMessage(message);
-  });
-
   socket.on("load all messages", data => {
     data.forEach(message => {
       displayMessage(message);
